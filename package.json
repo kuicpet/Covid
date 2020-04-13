@@ -1,0 +1,23 @@
+{
+  "name": "Covid",
+  "version": "1.0.0",
+  "description": "Build a simple single page web app that can allow the data passed to your estimator function to be inputed from a UI. Your goal is to build a simple UI that . Scores a minimum of 75 for performance, best practices, SEO, and accessibility, as measured by Chrome's Lighthouse tool. Host your web app with GitHub pages (or Netlify), and make sure the root of your project has a .env file with a FRONTEND entry pointing to the link of your hosted and running UI app. E.g:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuicpet/Covid.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuicpet/Covid/issues"
+  },
+  "homepage": "https://github.com/kuicpet/Covid#readme",
+  "dependencies": {
+    "bootstrap": "^4.4.1"
+  }
+}
