@@ -125,7 +125,7 @@ export default class CreateEstimate extends Component {
                        </div>
                        <div className="col-75">
                             <input className="form-control" name="reportedCases"
-                            type="number"id="reportedCases" value={this.state.estimate_reportedCases} onChange={this.onChangeEstimateReportedCases}required data-reported-case/>                 
+                            type="number"id="reportedCases" value={this.state.estimate_reportedCases} onChange={this.onChangeEstimateReportedCases}required data-reported-cases/>                 
                        </div>
                    </div>
                    <div className="row">
