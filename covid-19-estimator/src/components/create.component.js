@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import "../estimator";
 
 export default class CreateEstimate extends Component {
     constructor(props){
@@ -52,6 +53,7 @@ export default class CreateEstimate extends Component {
     }
     onSubmit(e){
         e.preventDefault();
+        
 
         console.log(`Form Submitted:`);
         console.log(`Estimate Region: ${this.state.estimate_region}`);
@@ -61,7 +63,14 @@ export default class CreateEstimate extends Component {
         console.log(`Estimate TotalHospitalBeds: ${this.state.estimate_totalHospitalBeds}`);
         console.log(`Estimate PeriodType: ${this.state.estimate_periodType}`);
 
-       
+       /*const newEstimate = {
+           estimate_region:this.state.estimate_region,
+           estimate_population:this.state.estimate_population,
+           estimate_timeToElapse:this.state.estimate_timeToElapse,
+           estimate_reportedCases:this.state.estimate_reportedCases,
+           estimate_totalHospitalBeds:this.state.estimate_totalHospitalBeds,
+           estimate_periodType:this.state.estimate_periodType
+       }*/
 
         this.setState({
             estimate_region:"",
