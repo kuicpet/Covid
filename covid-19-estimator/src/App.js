@@ -4,7 +4,7 @@ import './App.css';
 
 
 import CreateEstimate from "./components/create.component";
-import ResultEstimate from "./components/result.component";
+
 
 class App extends Component {
   render(){
@@ -14,7 +14,6 @@ class App extends Component {
             <h1>Novel COVID-19 Estimator</h1>
             <hr/>
             <Route path="/" component={CreateEstimate} />
-            <Route path="/result" component={ResultEstimate} />
           </div>
       </Router>
     )
