@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "../estimator";
+
 
 export default class CreateEstimate extends Component {
     constructor(props){
@@ -84,24 +84,40 @@ export default class CreateEstimate extends Component {
     render(){
         return(
             <div style={{marginTop: 2}}>
-                <h3>Create Estimate</h3>
+                <div>
+                    <h3>Create Estimate</h3>
+                </div>
                 <form onSubmit={this.onSubmit}>
-                    <div className="form-group">
-                        <label for="region">REGION*</label>
-                        <input className="form-control" name="region"
-                        type="text" id="region"value={this.state.estimate_region} onChange={this.onChangeEstimateRegion}required />
-                    </div>
-                    <div className="form-group">
-                        <label for="population">POPULATION*</label>
-                        <input className="form-control" name="population"
-                        type="number"id="population" value={this.state.estimate_population} onChange={this.onChangeEstimatePopulation}required data-population />
-                    </div>
-                    <div className="form-group">
-                        <label for="timeToElapse">TIME TO ELAPSE*</label>
-                        <input className="form-control" name="timeToElapse"
-                        type="number"id="timeToElapse" value={this.state.estimate_timeToElapse} onChange={this.onChangeEstimateTimeToElapse}required data-time-to-elapse/>
-                    </div>
-                    <div className="form-group">
+                   <div className="row">
+                       <div className="col-25">
+                            <label for="region">REGION*</label>
+                       </div>
+                       <div className="col-75">
+                            <input className="form-control" name="region"
+                            type="text" id="region"value={this.state.estimate_region} onChange={this.onChangeEstimateRegion}required />
+                       </div>
+                   </div>
+                   <div className="row">
+                       <div className="col-25">
+                         <  label for="population">POPULATION*</label>
+                       </div>
+                       <div className="col-75">
+                            <input className="form-control" name="population"
+                            type="number"id="population" value={this.state.estimate_population} onChange={this.onChangeEstimatePopulation}required data-population />
+                       </div>
+                   </div>
+                   <div className="row">
+                       <div className="col-25">
+                            <label for="timeToElapse">TIME TO ELAPSE*</label>
+                       </div>
+                       <div className="col-75">
+                            <input className="form-control" name="timeToElapse"
+                            type="number"id="timeToElapse" value={this.state.estimate_timeToElapse} onChange={this.onChangeEstimateTimeToElapse}required data-time-to-elapse/>                 
+                       </div>
+                   </div>
+                   <div className="row">
+                        <div className="col">
+                        <div className="form-group">
                         <div className="form-check form-check-inline">
                             <input className="form-check-input"
                             type="radio" id="periodTypeDays" name="periodTypes"
@@ -124,19 +140,29 @@ export default class CreateEstimate extends Component {
                             <label className="form-check-label"for="periodTypeMonths">Months</label>
                         </div>
                     </div>
-                    <div className="form-group">
-                        <label for="reportedCases">REPORTED CASES*</label>
-                        <input className="form-control"id="reportedCases" name="reportedCases"
-                        type="number" value={this.state.estimate_reportedCases} onChange={this.onChangeEstimateReportedCases}required data-reported-cases />
-                    </div>
-                    <div className="form-group">
-                        <label for="totalHospitalBeds">TOTAL HOSPITAL BEDS*</label>
-                        <input className="form-control"id="totalHospitalBeds" name="totalHospitalBeds"
-                        type="number" value={this.state.estimate_totalHospitalBeds} onChange={this.onChangeEstimateTotalHospitalBeds} required data-total-hospital-beds />
-                    </div>
-                    <div className="form-group">
-                        <input type="submit"value="ESTIMATE" className="btn btn-primary" data-go-estimate/>
-                    </div>
+                        </div>
+                   </div>
+                   <div className="row">
+                       <div className="col-25">
+                            <label for="reportedCases">REPORTED CASES*</label>
+                       </div>
+                       <div className="col-75">
+                            <input className="form-control"id="reportedCases" name="reportedCases"
+                            type="number" value={this.state.estimate_reportedCases} onChange={this.onChangeEstimateReportedCases}required data-reported-cases />                
+                       </div>
+                   </div>
+                   <div className="row">
+                       <div className="col-25">
+                            <label for="totalHospitalBeds">TOTAL HOSPITAL BEDS*</label>
+                       </div>
+                       <div className="col-75">
+                            <input className="form-control"id="totalHospitalBeds" name="totalHospitalBeds"
+                            type="number" value={this.state.estimate_totalHospitalBeds} onChange={this.onChangeEstimateTotalHospitalBeds} required data-total-hospital-beds /> 
+                       </div>
+                   </div>
+                   <div className="row">
+                   <    input type="submit"value="ESTIMATE"  data-go-estimate/>
+                   </div>
                 </form>
             </div>
         )
