@@ -108,7 +108,7 @@ export default class CreateEstimate extends Component {
                    </div>
                    <div className="row">
                        <div className="col-25">
-                           <label for="periodType">Period Type*</label>
+                           <label for="periodType">PERIOD TYPE*</label>
                        </div>
                         <div className="col-75">
                             <select data-period-type name="periodType" id="periodType"value={this.state.estimate_periodType}
