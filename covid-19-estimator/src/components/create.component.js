@@ -113,21 +113,21 @@ export default class CreateEstimate extends Component {
                             <input className="form-check-input"
                             type="radio" id="periodTypeDays" name="periodTypes"
                             value="Days" checked={this.state.estimate_periodType==="Days"}
-                            onChange={this.onChangeEstimatePeriodType}data-period-type />
+                            onChange={this.onChangeEstimatePeriodType} data-period-type />
                             <label className="form-check-label"for="periodTypeDays">Days</label>
                         </div>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input"
                             type="radio" id="periodTypeWeeks" name="periodTypes"
                             value="Weeks" checked={this.state.estimate_periodType==="Weeks"}
-                            onChange={this.onChangeEstimatePeriodType}data-period-type />
+                            onChange={this.onChangeEstimatePeriodType} data-period-type />
                             <label className="form-check-label" for="periodTypeWeeks">Weeks</label>
                         </div>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input" 
                             type="radio" id="periodTypeMonths" name="periodTypes"
                             value="Months" checked={this.state.estimate_periodType==="Months"}
-                            onChange={this.onChangeEstimatePeriodType}data-period-type />
+                            onChange={this.onChangeEstimatePeriodType} data-period-type />
                             <label className="form-check-label"for="periodTypeMonths">Months</label>
                         </div>
                     </div>
