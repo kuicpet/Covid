@@ -63,15 +63,6 @@ export default class CreateEstimate extends Component {
         console.log(`Estimate TotalHospitalBeds: ${this.state.estimate_totalHospitalBeds}`);
         console.log(`Estimate PeriodType: ${this.state.estimate_periodType}`);
 
-       /*const newEstimate = {
-           estimate_region:this.state.estimate_region,
-           estimate_population:this.state.estimate_population,
-           estimate_timeToElapse:this.state.estimate_timeToElapse,
-           estimate_reportedCases:this.state.estimate_reportedCases,
-           estimate_totalHospitalBeds:this.state.estimate_totalHospitalBeds,
-           estimate_periodType:this.state.estimate_periodType
-       }*/
-
         this.setState({
             estimate_region:"",
             estimate_population: "",
@@ -161,7 +152,7 @@ export default class CreateEstimate extends Component {
                        </div>
                    </div>
                    <div className="row">
-                   <    input type="submit"value="ESTIMATE"  data-go-estimate/>
+                    <input type="submit"value="ESTIMATE" className="btn" data-go-estimate/>
                    </div>
                 </form>
             </div>
