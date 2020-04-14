@@ -121,6 +121,15 @@ export default class CreateEstimate extends Component {
                    </div>
                    <div className="row">
                        <div className="col-25">
+                            <label for="reportedCases">REPORTED CASES*</label>
+                       </div>
+                       <div className="col-75">
+                            <input className="form-control" name="reportedCases"
+                            type="number"id="reportedCases" value={this.state.estimate_reportedCases} onChange={this.onChangeEstimateReportedCases}required data-reported-case/>                 
+                       </div>
+                   </div>
+                   <div className="row">
+                       <div className="col-25">
                             <label for="totalHospitalBeds">TOTAL HOSPITAL BEDS*</label>
                        </div>
                        <div className="col-75">
