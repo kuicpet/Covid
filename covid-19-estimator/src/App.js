@@ -12,9 +12,8 @@ class App extends Component {
     return (
       <Router>
           <div className="container">
-            <h1>COVID-19 Estimator</h1>
+            <h1>Novel COVID-19 Estimator</h1>
             <hr/>
-
             <Route path="/" component={CreateEstimate} />
             <Route path="/result" component={ResultEstimate} />
           </div>

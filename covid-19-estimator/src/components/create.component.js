@@ -1,158 +1,132 @@
 import React, {Component} from 'react';
 
 export default class CreateEstimate extends Component {
-    
     constructor(props){
         super(props);
-
-        this.onChangeRegion = this.onChangeRegion.bind(this);
-        this.onChangePopulation = this.onChangePopulation.bind(this);
-        this.onChangeAvgAge = this.onChangeAvgAge.bind(this);
-        this.onChangeAvgDailyIncomeInUSD = this.onChangeAvgDailyIncomeInUSD.bind(this);
-        this.onChangeAvgDailyIncomePopulation = this.onChangeAvgDailyIncomePopulation.bind(this);
-        this.onChangePeriodType = this.onChangePeriodType.bind(this);
-        this.onChangeTimeToElapse =this.onChangeTimeToElapse.bind(this);
-        this.onChangeReportedCases = this.onChangeReportedCases.bind(this);
-        this.onChangeTotalHospitalBeds = this.onChangeTotalHospitalBeds.bind(this); 
-
-
         this.state = {
-            region:'',
-            population:'',
-            avgAge:'',
-            avgDailyIncomeInUSD:'',
-            avgDailyIncomePopulation: '',
-            periodType:'',
-            timeToElapse:'',
-            reportedCases:'',
-            totalHospitalBeds:'' 
-        };
-    };
-    onChangeRegion(e){
+            estimate_region: "",
+            estimate_population: "",
+            estimate_timeToElapse:"",
+            estimate_reportedCases:"",
+            estimate_totalHospitalBeds:"",
+            estimate_periodType: "",
+           
+        }
+        this.onChangeEstimateRegion = this.onChangeEstimateRegion.bind(this);
+        this.onChangeEstimatePopulation = this.onChangeEstimatePopulation.bind(this);
+        this.onChangeEstimateTimeToElapse = this.onChangeEstimateTimeToElapse.bind(this);
+        this.onChangeEstimateReportedCases = this.onChangeEstimateReportedCases.bind(this);
+        this.onChangeEstimateTotalHospitalBeds = this.onChangeEstimateTotalHospitalBeds.bind(this);
+        this.onChangeEstimatePeriodType = this.onChangeEstimatePeriodType.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+    onChangeEstimateRegion(e){
         this.setState({
-            data_region: e.target.value
+            estimate_region: e.target.value
         });
     }
-    onChangePopulation(e){
+    onChangeEstimatePopulation(e){
         this.setState({
-            data_population: e.target.value
+            estimate_population: e.target.value
         });
     }
-    onChangeAvgAge(e){
+    onChangeEstimateTimeToElapse(e){
         this.setState({
-            data_avg_age: e.target.value
+            estimate_timeToElapse: e.target.value
         });
     }
-    onChangeAvgDailyIncomeInUSD(e){
+    onChangeEstimateReportedCases(e){
         this.setState({
-            data_avg_daily_income_in_usd: e.target.value
+            estimate_reportedCases: e.target.value
         });
     }
-    onChangeAvgDailyIncomePopulation(e){
+    onChangeEstimateTotalHospitalBeds(e){
         this.setState({
-            data_avg_daily_income_population: e.target.value
+            estimate_totalHospitalBeds:e.target.value
         });
     }
-    onChangePeriodType(e){
+    onChangeEstimatePeriodType(e){
         this.setState({
-            data_period_type: e.target.value
-        });
-    }
-    onChangeTimeToElapse(e){
-        this.setState({
-            data_time_to_elapse: e.target.value
-        });
-    }
-    onChangeReportedCases(e){
-        this.setState({
-            data_reported_cases: e.target.value
-        });
-    }
-    onChangeTotalHospitalBeds(e){
-        this.setState({
-            data_total_hospital_beds: e.target.value
+            estimate_periodType: e.target.value
         });
     }
     onSubmit(e){
         e.preventDefault();
 
         console.log(`Form Submitted:`);
-        console.log(`Region:${this.state.region}`);
-        console.log(`Population:${this.state.population}`);
-        console.log(`AvgAge:${this.state.avgAge}`);
-        console.log(`AvgDailyIncomeInUSD:${this.state.avgDailyIncomeInUSD}`);
-        console.log(`AvgDailyIncomePopulation:${this.state.avgDailyIncomePopulation}`);
-        console.log(`PeriodType:${this.state.periodType}`);
-        console.log(`TimeToElapse:${this.state.timeToElapse}`);
-        console.log(`ReportedCases:${this.state.reportedCases}`);
-        console.log(`TotalHospitalBeds:${this.state.totalHospitalBeds}`);
+        console.log(`Estimate Region: ${this.state.estimate_region}`);
+        console.log(`Estimate Population: ${this.state.estimate_population}`);
+        console.log(`Estimate TimeToElapse: ${this.state.estimate_timeToElapse}`);
+        console.log(`Estimate ReportedCases: ${this.state.estimate_reportedCases}`);
+        console.log(`Estimate TotalHospitalBeds: ${this.state.estimate_totalHospitalBeds}`);
+        console.log(`Estimate PeriodType: ${this.state.estimate_periodType}`);
+
+       
 
         this.setState({
-            region:'',
-            population:'',
-            avgAge:'',
-            avgDailyIncomeInUSD:'',
-            avgDailyIncomePopulation: '',
-            periodType:'',
-            timeToElapse:'',
-            reportedCases:'',
-            totalHospitalBeds:'' 
+            estimate_region:"",
+            estimate_population: "",
+            estimate_timeToElapse:"",
+            estimate_reportedCases:"",
+            estimate_totalHospitalBeds:"",
+            estimate_periodType:"",
         })
     }
-
     render(){
         return(
-            <div>
-                <h3>Create an Estimate</h3>
+            <div style={{marginTop: 2}}>
+                <h3>Create Estimate</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
-                        <label>Name of Region*</label>
-                        <input type="text" className="form-control"value={this.state.data_region} 
-                        onChange={this.onChangeRegion}required/>
+                        <label for="region">REGION*</label>
+                        <input className="form-control" name="region"
+                        type="text" id="region"value={this.state.estimate_region} onChange={this.onChangeEstimateRegion}required />
                     </div>
                     <div className="form-group">
-                        <label>Population of Region*</label>
-                        <input type="number" className="form-control"value={this.state.data_population} 
-                        onChange={this.onChangePopulation}required/>
+                        <label for="population">POPULATION*</label>
+                        <input className="form-control" name="population"
+                        type="number"id="population" value={this.state.estimate_population} onChange={this.onChangeEstimatePopulation}required data-population />
                     </div>
                     <div className="form-group">
-                        <label>AvgAge*</label>
-                        <input type="number" className="form-control"value={this.state.data_avg_age} 
-                        onChange={this.onChangeAvgAge}required/>
-                    </div>
-                    <div className="form-group">
-                        <label>AvgDailyIncomeInUSD*</label>
-                        <input type="number" className="form-control"value={this.state.data_avg_daily_income_in_usd} 
-                        onChange={this.onChangeAvgDailyIncomeInUSD}required/>
+                        <label for="timeToElapse">TIME TO ELAPSE*</label>
+                        <input className="form-control" name="timeToElapse"
+                        type="number"id="timeToElapse" value={this.state.estimate_timeToElapse} onChange={this.onChangeEstimateTimeToElapse}required data-time-to-elapse/>
                     </div>
                     <div className="form-group">
                         <div className="form-check form-check-inline">
                             <input className="form-check-input"
-                            type="radio"
-                            name="periodType"
-                            id="periodTypeDays"
-                            value="Days"
-                            checked={this.state.data_period_type==='Days'}
-                            onChange={this.onChangePeriodType}/>
+                            type="radio" id="periodTypeDays" name="periodTypes"
+                            value="Days" checked={this.state.estimate_periodType==="Days"}
+                            onChange={this.onChangeEstimatePeriodType}data-period-type />
+                            <label className="form-check-label"for="periodTypeDays">Days</label>
+                        </div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input"
+                            type="radio" id="periodTypeWeeks" name="periodTypes"
+                            value="Weeks" checked={this.state.estimate_periodType==="Weeks"}
+                            onChange={this.onChangeEstimatePeriodType}data-period-type />
+                            <label className="form-check-label" for="periodTypeWeeks">Weeks</label>
+                        </div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" 
+                            type="radio" id="periodTypeMonths" name="periodTypes"
+                            value="Months" checked={this.state.estimate_periodType==="Months"}
+                            onChange={this.onChangeEstimatePeriodType}data-period-type />
+                            <label className="form-check-label"for="periodTypeMonths">Months</label>
                         </div>
                     </div>
                     <div className="form-group">
-                        <label>TimeToElapse*</label>
-                        <input type="number" className="form-control"value={this.state.data_time_to_elapse} 
-                        onChange={this.onChangeTimeToElapse}required/>
+                        <label for="reportedCases">REPORTED CASES*</label>
+                        <input className="form-control"id="reportedCases" name="reportedCases"
+                        type="number" value={this.state.estimate_reportedCases} onChange={this.onChangeEstimateReportedCases}required data-reported-cases />
                     </div>
                     <div className="form-group">
-                        <label>ReportedCases*</label>
-                        <input type="number" className="form-control"value={this.state.data_reported_cases} 
-                        onChange={this.onChangeReportedCases}required/>
+                        <label for="totalHospitalBeds">TOTAL HOSPITAL BEDS*</label>
+                        <input className="form-control"id="totalHospitalBeds" name="totalHospitalBeds"
+                        type="number" value={this.state.estimate_totalHospitalBeds} onChange={this.onChangeEstimateTotalHospitalBeds} required data-total-hospital-beds />
                     </div>
                     <div className="form-group">
-                        <label>TotalHospitalBeds*</label>
-                        <input type="text" className="form-control"value={this.state.data_total_hospital_beds} 
-                        onChange={this.onChangeTotalHospitalBeds}required/>
-                    </div>
-                    <div className="form-group">
-                        <input type="submit" value="Create Estimate" className="btn"/>
+                        <input type="submit"value="ESTIMATE" className="btn btn-primary" data-go-estimate/>
                     </div>
                 </form>
             </div>
