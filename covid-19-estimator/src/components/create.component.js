@@ -107,40 +107,17 @@ export default class CreateEstimate extends Component {
                        </div>
                    </div>
                    <div className="row">
-                        <div className="col">
-                        <div className="form-group">
-                        <div className="form-check form-check-inline">
-                            <input className="form-check-input"
-                            type="radio" id="periodTypeDays" name="periodType"
-                            value="Days" checked={this.state.estimate_periodType==="Days"}
-                            onChange={this.onChangeEstimatePeriodType} data-period-type />
-                            <label className="form-check-label"for="periodType">Days</label>
-                        </div>
-                        <div className="form-check form-check-inline">
-                            <input className="form-check-input"
-                            type="radio" id="periodTypeWeeks" name="periodType"
-                            value="Weeks" checked={this.state.estimate_periodType==="Weeks"}
-                            onChange={this.onChangeEstimatePeriodType} data-period-type />
-                            <label className="form-check-label" for="periodType">Weeks</label>
-                        </div>
-                        <div className="form-check form-check-inline">
-                            <input className="form-check-input" 
-                            type="radio" id="periodTypeMonths" name="periodType"
-                            value="Months" checked={this.state.estimate_periodType==="Months"}
-                            onChange={this.onChangeEstimatePeriodType} data-period-type />
-                            <label className="form-check-label"for="periodType">Months</label>
-                        </div>
-                    </div>
-                        </div>
-                   </div>
-                   <div className="row">
                        <div className="col-25">
-                            <label for="reportedCases">REPORTED CASES*</label>
+                           <label for="periodType">Period Type*</label>
                        </div>
-                       <div className="col-75">
-                            <input className="form-control"id="reportedCases" name="reportedCases"
-                            type="number" value={this.state.estimate_reportedCases} onChange={this.onChangeEstimateReportedCases}required data-reported-cases />                
-                       </div>
+                        <div className="col-75">
+                            <select data-period-type name="periodType" id="periodType"value={this.state.estimate_periodType}
+                            onChange={this.onChangeEstimatePeriodType}>
+                                <option value="days">Days</option>
+                                <option value="weeks">Weeks</option>
+                                <option value="months">Months</option>
+                            </select>
+                        </div>
                    </div>
                    <div className="row">
                        <div className="col-25">
