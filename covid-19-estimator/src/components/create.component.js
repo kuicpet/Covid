@@ -74,73 +74,70 @@ export default class CreateEstimate extends Component {
     }
     render(){
         return(
-            <div style={{marginTop: 2}}>
-                <div>
-                    <h3>Create Estimate</h3>
-                </div>
-                <form onSubmit={this.onSubmit}>
-                   <div className="row">
-                       <div className="col-25">
-                            <label for="region">REGION*</label>
-                       </div>
-                       <div className="col-75">
-                            <input className="form-control" name="region"
+            <div style={{marginTop: 2}} className="container">
+                <div className="row">
+                    <div className="col-sm-2"></div>
+                    <div className="col-sm-8">
+                        <h4 className="text-center">Create Estimate</h4><hr/>
+                        <form>
+                        <div className="form-group row">
+                            <label className="col-sm-5 col-form-label text-justify" for="region">Region*</label>
+                            <div className="col-sm-7">
+                            <input className="form-control my-2" name="region"
                             type="text" id="region"value={this.state.estimate_region} onChange={this.onChangeEstimateRegion}required />
-                       </div>
-                   </div>
-                   <div className="row">
-                       <div className="col-25">
-                         <  label for="population">POPULATION*</label>
-                       </div>
-                       <div className="col-75">
-                            <input className="form-control" name="population"
-                            type="number"id="population" value={this.state.estimate_population} onChange={this.onChangeEstimatePopulation}required data-population />
-                       </div>
-                   </div>
-                   <div className="row">
-                       <div className="col-25">
-                            <label for="timeToElapse">TIME TO ELAPSE*</label>
-                       </div>
-                       <div className="col-75">
-                            <input className="form-control" name="timeToElapse"
-                            type="number"id="timeToElapse" value={this.state.estimate_timeToElapse} onChange={this.onChangeEstimateTimeToElapse}required data-time-to-elapse/>                 
-                       </div>
-                   </div>
-                   <div className="row">
-                       <div className="col-25">
-                           <label for="periodType">PERIOD TYPE*</label>
-                       </div>
-                        <div className="col-75">
-                            <select data-period-type name="periodType" id="periodType"value={this.state.estimate_periodType}
-                            onChange={this.onChangeEstimatePeriodType}>
-                                <option value="days">Days</option>
-                                <option value="weeks">Weeks</option>
-                                <option value="months">Months</option>
-                            </select>
+                            </div>
                         </div>
-                   </div>
-                   <div className="row">
-                       <div className="col-25">
-                            <label for="reportedCases">REPORTED CASES*</label>
-                       </div>
-                       <div className="col-75">
-                            <input className="form-control" name="reportedCases"
-                            type="number"id="reportedCases" value={this.state.estimate_reportedCases} onChange={this.onChangeEstimateReportedCases}required data-reported-cases/>                 
-                       </div>
-                   </div>
-                   <div className="row">
-                       <div className="col-25">
-                            <label for="totalHospitalBeds">TOTAL HOSPITAL BEDS*</label>
-                       </div>
-                       <div className="col-75">
-                            <input className="form-control"id="totalHospitalBeds" name="totalHospitalBeds"
+                        <div className="form-group row">
+                            <label className="col-sm-5 col-form-label text-justify" for="population">Population*</label>
+                            <div className="col-sm-7">
+                            <input className="form-control my-2" name="population"
+                            type="number"id="population" value={this.state.estimate_population} onChange={this.onChangeEstimatePopulation}required data-population />
+                            </div>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-5 col-form-label text-justify" for="timeToElapse">Time to Elapse*</label>
+                            <div className="col-sm-7">
+                            <input className="form-control my-2" name="timeToElapse"
+                            type="number"id="timeToElapse" value={this.state.estimate_timeToElapse} onChange={this.onChangeEstimateTimeToElapse}required data-time-to-elapse/>    
+                            </div>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-5 col-form-label text-justify" for="periodType">Period Type*</label>
+                            <div className="col-sm-7">
+                                <select className="my-2"  data-period-type name="periodType" id="periodType"value={this.state.estimate_periodType}
+                                onChange={this.onChangeEstimatePeriodType}>
+                                    <option value="days">Days</option>
+                                    <option value="weeks">Weeks</option>
+                                    <option value="months">Months</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-5 col-form-label text-justify" for="reportedCases">Reported Cases*</label>
+                            <div className="col-sm-7">
+                            <input className="form-control my-2" name="reportedCases"
+                            type="number"id="reportedCases" value={this.state.estimate_reportedCases} onChange={this.onChangeEstimateReportedCases}required data-reported-cases/>   
+                            </div>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-5 col-form-label text-justify" for="totalHospitalBeds">Total Hospital Beds*</label>
+                            <div className="col-sm-7">
+                            <input className="form-control my-2"id="totalHospitalBeds" name="totalHospitalBeds"
                             type="number" value={this.state.estimate_totalHospitalBeds} onChange={this.onChangeEstimateTotalHospitalBeds} required data-total-hospital-beds /> 
-                       </div>
-                   </div>
-                   <div className="row">
-                    <input type="submit"value="ESTIMATE" className="btn" data-go-estimate/>
-                   </div>
-                </form>
+                             </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm-12 text-center">
+                                <input type="submit" className="btn btn-primary px-5" value="Estimate" data-go-estimate/>
+                            </div>
+                        </div>    
+                        </form>
+                    </div>
+                    <div className="col-sm-2"></div> 
+                </div>
+                <div className="footer my-5 py-2">
+                    <small className="footer-copyright text-center">&copy;2020 | KingsleyUmujeyan</small>
+                </div>
             </div>
         )
     }

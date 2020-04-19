@@ -2,21 +2,26 @@
   box-sizing: border-box;
 }
 body{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-items: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: 100%;
-  height: auto;
+  min-height: 100vh;
   margin: 0 auto;
-  color: #FFEBCF;
-  background: linear-gradient(320deg, #0E6BA8, #00072D);
-    background-size: 400% 400%;
-
-    -webkit-animation: background-animate 6s ease infinite;
-    -moz-animation: background-animate 6s ease infinite;
-    animation: background-animate 6s ease infinite;
+  color: #FFEBCF !important;
   font-weight: 400;
+  background: #A6E1FA;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(45.34deg, #00072D 5.66%, #0A2472 50.01%, #BA7BA1 94.35%);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(45.34deg, #00072D 5.66%, #0A2472 50.01%, #BA7BA1 94.35%);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+  background-size: 400% 400%;
+animation: gradient 15s ease infinite;
 }
 .container {
-  width: 75%;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -25,39 +30,43 @@ body{
   min-height: 100vh;
   margin: 0 auto;
 }
+main{
+  flex: 1 0 auto;
+}
 hr{
-  color: #EA4C4C;
+  border-top:1px solid #FFEBCF !important;
 }
-.form-check-inline{
-  display: inline;
-  text-align: center;
-}
-.form-control,select,option{
-  width: 90%;
-  padding: 12px;
-  margin: 10px;
+
+.form-control,select{
+  width: 100%;
+  padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  resize: vertical;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  color: #FFEBCF !important;
+}
+option{
+  color: #00072D;
 }
 label {
   text-align: justify;
   padding: 12px 12px 12px 0;
-  display: inline-block;
+  display: inline-block !important;
 }
-.btn{
-  background-color: #FFEBCF;
-  color: #00072D;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
+.btn-primary{
+  color: #FFEBCF;
+  background-color: transparent !important;
+  border: 1px solid #FFEBCF !important;
+  outline: none !important;
+  border-radius: 0 !important;
   cursor: pointer;
   margin-top: 1.5rem;
 }
 .btn:hover{
-  background-color:blue;
-  color: #FFEBCF;
+  background-color:#FFEBCF !important;
+  color: #00072D !important;
+  border-radius: 50px !important;
+  transform: 0.3s all ease-in-out;
 }
 .col-25 {
   float: left;
@@ -80,3 +89,15 @@ label {
     margin-top: 0;
   }
 }
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+  
