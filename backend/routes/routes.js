@@ -9,6 +9,7 @@ app.get('/estimates',async(req,res,next) => {
     const estimates = await estimateModel.find({});
     try {
         res.status(200).send(estimates);
+        console.log("Successful get response")
     } catch (error) {
         res.status(500).send(error);
     }
@@ -16,7 +17,7 @@ app.get('/estimates',async(req,res,next) => {
 });
 
 app.post('/estimates/create',async(req,res,next) => {
-    const estimate = new sstimateModel({
+    const estimate = new estimateModel({
         estimate_region: req.body.estimate_region,
         estimate_population: req.body.estimate_population,
         estimate_timeToElapse: req.body.estimate_timeToElapse,
