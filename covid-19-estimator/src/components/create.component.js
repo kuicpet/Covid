@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -9,17 +10,19 @@ export default class CreateEstimate extends Component {
             estimate_region: "",
             estimate_population: "",
             estimate_timeToElapse:"",
+            estimate_periodType: "",
             estimate_reportedCases:"",
             estimate_totalHospitalBeds:"",
-            estimate_periodType: "",
+           
            
         }
         this.onChangeEstimateRegion = this.onChangeEstimateRegion.bind(this);
         this.onChangeEstimatePopulation = this.onChangeEstimatePopulation.bind(this);
         this.onChangeEstimateTimeToElapse = this.onChangeEstimateTimeToElapse.bind(this);
+        this.onChangeEstimatePeriodType = this.onChangeEstimatePeriodType.bind(this);
         this.onChangeEstimateReportedCases = this.onChangeEstimateReportedCases.bind(this);
         this.onChangeEstimateTotalHospitalBeds = this.onChangeEstimateTotalHospitalBeds.bind(this);
-        this.onChangeEstimatePeriodType = this.onChangeEstimatePeriodType.bind(this);
+       
         this.onSubmit = this.onSubmit.bind(this);
     }
     onChangeEstimateRegion(e){
@@ -37,6 +40,11 @@ export default class CreateEstimate extends Component {
             estimate_timeToElapse: e.target.value
         });
     }
+    onChangeEstimatePeriodType(e){
+        this.setState({
+            estimate_periodType: e.target.value
+        });
+    }
     onChangeEstimateReportedCases(e){
         this.setState({
             estimate_reportedCases: e.target.value
@@ -47,11 +55,7 @@ export default class CreateEstimate extends Component {
             estimate_totalHospitalBeds:e.target.value
         });
     }
-    onChangeEstimatePeriodType(e){
-        this.setState({
-            estimate_periodType: e.target.value
-        });
-    }
+  
     onSubmit(e){
         e.preventDefault();
         
@@ -60,17 +64,31 @@ export default class CreateEstimate extends Component {
         console.log(`Estimate Region: ${this.state.estimate_region}`);
         console.log(`Estimate Population: ${this.state.estimate_population}`);
         console.log(`Estimate TimeToElapse: ${this.state.estimate_timeToElapse}`);
+        console.log(`Estimate PeriodType: ${this.state.estimate_periodType}`);
         console.log(`Estimate ReportedCases: ${this.state.estimate_reportedCases}`);
         console.log(`Estimate TotalHospitalBeds: ${this.state.estimate_totalHospitalBeds}`);
-        console.log(`Estimate PeriodType: ${this.state.estimate_periodType}`);
+      
+
+        const newEstimate = {
+            estimate_region: this.state.estimate_region,
+            estimate_population: this.state.estimate_population,
+            estimate_timeToElapse: this.state.estimate_timeToElapse,
+            estimate_periodType: this.state.estimate_periodType,
+            estimate_reportedCases: this.state.estimate_reportedCases,
+            estimate_totalHospitalBeds: this.state.estimate_totalHospitalBeds,
+          
+        };
+
+        axios.post('http://localhost:4000/estimates/create', newEstimate).then(res => console.log(res.data));
 
         this.setState({
             estimate_region:"",
             estimate_population: "",
             estimate_timeToElapse:"",
+            estimate_periodType:"",
             estimate_reportedCases:"",
             estimate_totalHospitalBeds:"",
-            estimate_periodType:"",
+            
         })
     }
     render(){
