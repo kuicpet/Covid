@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
 
-let createEstimateSchema = mongoose.Schema({
-    estimate_region: { type:String },
-    estimate_population: { type: Number },
-    estimate_timeToElapse:{ type: Number },
-    estimate_reportedCases:{ type: Number },
-    estimate_totalHospitalBeds:{ type: Number },
-    estimate_periodType: { type: String },
+let estimateSchema = mongoose.Schema({
+    estimate_region: { type:String,required: true },
+    estimate_population: { type: Number,required: true },
+    estimate_timeToElapse:{ type: Number,required: true },
+    estimate_reportedCases:{ type: Number,required: true },
+    estimate_totalHospitalBeds:{ type: Number,required: true },
+    estimate_periodType: { type: String,required: true },
+
 });
-const CreateEstimate = mongoose.model("CreateEstimate",createEstimateSchema);
-module.exports = CreateEstimate;
+const Estimate = mongoose.model("Estimate",estimateSchema);
+module.exports = Estimate;
