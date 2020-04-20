@@ -75,35 +75,35 @@ export default class CreateEstimate extends Component {
     }
     render(){
         return(
-            <div style={{marginTop: 2}} className="container">
+            <div style={{marginTop: 2}}>
                 <div className="row">
                     <div className="col-sm-2"></div>
                     <div className="col-sm-8">
                         <h4 className="text-center">Create Estimate</h4><hr/>
-                        <form>
+                        <form onSubmit={this.onSubmit}>
                         <div className="form-group row">
-                            <label className="col-sm-5 col-form-label text-justify" for="region">Region*</label>
+                            <label className="col-sm-5 col-form-label text-justify" htmlFor="region">Region*</label>
                             <div className="col-sm-7">
                             <input className="form-control my-2" name="region"
                             type="text" id="region"value={this.state.estimate_region} onChange={this.onChangeEstimateRegion}required />
                             </div>
                         </div>
                         <div className="form-group row">
-                            <label className="col-sm-5 col-form-label text-justify" for="population">Population*</label>
+                            <label className="col-sm-5 col-form-label text-justify" htmlFor="population">Population*</label>
                             <div className="col-sm-7">
                             <input className="form-control my-2" name="population"
                             type="number"id="population" value={this.state.estimate_population} onChange={this.onChangeEstimatePopulation}required data-population />
                             </div>
                         </div>
                         <div className="form-group row">
-                            <label className="col-sm-5 col-form-label text-justify" for="timeToElapse">Time to Elapse*</label>
+                            <label className="col-sm-5 col-form-label text-justify" htmlFor="timeToElapse">Time to Elapse*</label>
                             <div className="col-sm-7">
                             <input className="form-control my-2" name="timeToElapse"
                             type="number"id="timeToElapse" value={this.state.estimate_timeToElapse} onChange={this.onChangeEstimateTimeToElapse}required data-time-to-elapse/>    
                             </div>
                         </div>
                         <div className="form-group row">
-                            <label className="col-sm-5 col-form-label text-justify" for="periodType">Period Type*</label>
+                            <label className="col-sm-5 col-form-label text-justify" htmlFor="periodType">Period Type*</label>
                             <div className="col-sm-7">
                                 <select className="my-2"  data-period-type name="periodType" id="periodType"value={this.state.estimate_periodType}
                                 onChange={this.onChangeEstimatePeriodType}>
@@ -114,14 +114,14 @@ export default class CreateEstimate extends Component {
                             </div>
                         </div>
                         <div className="form-group row">
-                            <label className="col-sm-5 col-form-label text-justify" for="reportedCases">Reported Cases*</label>
+                            <label className="col-sm-5 col-form-label text-justify" htmlFor="reportedCases">Reported Cases*</label>
                             <div className="col-sm-7">
                             <input className="form-control my-2" name="reportedCases"
                             type="number"id="reportedCases" value={this.state.estimate_reportedCases} onChange={this.onChangeEstimateReportedCases}required data-reported-cases/>   
                             </div>
                         </div>
                         <div className="form-group row">
-                            <label className="col-sm-5 col-form-label text-justify" for="totalHospitalBeds">Total Hospital Beds*</label>
+                            <label className="col-sm-5 col-form-label text-justify" htmlFor="totalHospitalBeds">Total Hospital Beds*</label>
                             <div className="col-sm-7">
                             <input className="form-control my-2"id="totalHospitalBeds" name="totalHospitalBeds"
                             type="number" value={this.state.estimate_totalHospitalBeds} onChange={this.onChangeEstimateTotalHospitalBeds} required data-total-hospital-beds /> 
